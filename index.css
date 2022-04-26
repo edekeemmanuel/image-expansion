@@ -1,0 +1,174 @@
+@import url('https://fonts.googleapis.com/css2?family=Muli&display=swap');
+
+/* animated background */
+@keyframes background-design {
+
+  0% {
+    background-color: darkgray;
+  }
+  15% {
+    background-color:darkcyan;
+  }
+  30% {
+    background-color:dimgray;
+  }
+  45% {
+    background-color: darkslategrey
+  }
+  60% {
+    background-color: darkslateblue;
+  }
+  75% {
+    background-color:darkkhaki;
+  }
+  100% {
+    background-color:  black;
+  }
+}
+
+@keyframes main-design {
+
+0% {
+  transform: matrix(1, -0.3, 0, 1, 0, 0);
+}
+
+15% {
+  transform: matrix(2, -0.5, 0.5, 3, 2, 3);
+}
+
+30% {
+    transform: rotate3d(x, y, z, 50deg);
+}
+45% {
+  transform-origin: 0 0 0;
+}
+
+60% {
+  transform-origin: 0 0 0;
+}
+
+75% {
+  transform: rotate(180deg)
+}
+
+100% {
+  transform: rotate(180deg)
+}
+  }
+
+
+* {
+  box-sizing: border-box;
+}
+
+
+body {
+  font-family: 'Muli', sans-serif;
+  font-size: 16px;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  height: 78vh;
+  overflow: hidden;
+  background-image: url('pepsis.jpg'); /*https: //pin.it/5imNfX8*/
+  background-repeat: no-repeat;
+  /* animation effect */
+  animation-name: background-design;
+  animation-duration: 5s;
+  animation-delay: 3s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: cubic-bezier(0.42, 0, 1, 1);
+  animation-fill-mode: both;
+}
+
+.container {
+  display: flex;
+  width: 90vw;
+}
+
+.img-board {
+  background-size: cover;
+  background-position: start;
+  background-repeat: no-repeat;
+  height: 50vh;
+  border-style: inset;
+  border-color: rgb(112, 76, 76);
+  border-image: 40% stretch;
+  border-radius: 50px;
+  color: white;
+  cursor: pointer;
+  flex: 0.5;
+  margin: 5px;
+  position: relative;
+  transition: flex 0.9s ease-in;
+  
+}
+
+.img-board:hover {
+  -ms-transform: rotate(40deg);
+  transform: rotate(90deg);
+  animation-name: main-design;
+  animation-duration: 3s;
+  animation-delay: 5s;
+  animation-iteration-count: 5;
+  animation-direction: alternate;
+  animation-timing-function: cubic-bezier(0.42, 0, 1, 1);
+  animation-fill-mode: both;
+}
+
+.img-board h3 {
+font-size: 20px;
+position: absolute;
+bottom: 20px;
+left: 20px;
+margin: 0;
+opacity: 0;
+}
+
+.img-board.active {
+  flex: 5;
+  border-image: none;
+  border-color: transparent;
+  background-color: transparent;
+  color: white;
+  cursor: pointer;
+  transition: flex 0.9s ease;
+  
+}
+
+.img-board.active h3 {
+  opacity: 4;
+}
+
+
+/* 
+@media (max-width: 480px) {
+  .container {
+    width: 100vw;
+  }
+  .img-board {
+    height: 30vh;
+  }
+  .img-board:nth-of-type(4),
+  .img-board:nth-of-type(5) {
+    display: none;
+  }
+} */
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {}
+  
